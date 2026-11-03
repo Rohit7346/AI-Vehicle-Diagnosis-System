@@ -1,0 +1,36 @@
+# ==============================================================================
+# Smoke-Test Training Configuration: Vehicle Component Detection
+# Optimized for: NVIDIA GeForce RTX 3050 Laptop GPU (4GB VRAM)
+# ==============================================================================
+
+# Dataset Paths (Relative to this config file's directory or absolute)
+path: ../../data
+train: processed/train
+val: processed/val
+test: processed/test
+
+# 10 Subsystem Component Classes (Identical to production ontology)
+names:
+  0: engine_bay
+  1: battery
+  2: alternator
+  3: radiator
+  4: brake_rotor
+  5: brake_caliper
+  6: tire_tread
+  7: tire_sidewall
+  8: suspension_strut
+  9: exhaust_manifold
+
+# Smoke-Test Hyperparameters & Safety Constraints
+model_name: yolov8n.pt                  # Lightweight Nano backbone (~3.2M params)
+weights_path: ml/weights/smoke_test_component_best.pt
+input_size: 640
+epochs: 3                               # Short run to verify backward pass & loss convergence
+batch_size: 8                           # Low VRAM footprint (<2GB), zero OOM risk on 4GB GPU
+learning_rate: 0.01
+device: 0                               # GPU 0 (NVIDIA RTX 3050)
+confidence_threshold: 0.25
+iou_threshold: 0.45
+workers: 2                              # Windows multiprocessing safety
+amp: true                               # Automatic Mixed Precision (FP16) on Ampere Tensor Cores

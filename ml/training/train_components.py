@@ -1,11 +1,13 @@
 """
 Component Detector Training Pipeline.
 Enforces pre-flight dataset verification and annotation compliance before training.
+Optimized for modular YOLO model selection and GPU acceleration.
 """
 
 import argparse
 import sys
 from pathlib import Path
+from typing import Optional
 import yaml
 
 from ml.datasets.annotator_utils import AnnotationValidator
@@ -26,6 +28,8 @@ def verify_dataset_readiness(config_path: Path, min_samples: int = 10) -> bool:
 
     base_dir = config_path.parent.parent.parent  # Project root
     data_dir = (base_dir / "data").resolve()
+    
+    # Check both direct split folders and nested images/labels layouts
     train_images = data_dir / "processed" / "train"
     train_labels = data_dir / "annotations" / "train"
     val_images = data_dir / "processed" / "val"
@@ -60,26 +64,47 @@ def verify_dataset_readiness(config_path: Path, min_samples: int = 10) -> bool:
     return True
 
 
-def run_training(config_path: Path, epochs: int = 100, batch_size: int = 16, device: str = "cpu"):
+def run_training(
+    config_path: Path,
+    model_name: Optional[str] = None,
+    epochs: Optional[int] = None,
+    batch_size: Optional[int] = None,
+    device: Optional[str] = None,
+    imgsz: int = 640,
+):
     """Executes YOLO component detection training pipeline."""
     if not verify_dataset_readiness(config_path):
         print("[TERMINATED] Training aborted due to dataset validation failure.", file=sys.stderr)
         sys.exit(1)
 
+    with open(config_path, "r", encoding="utf-8") as f:
+        cfg = yaml.safe_load(f)
+
+    # Resolve parameters: CLI args override YAML config, which overrides defaults
+    target_model = model_name or cfg.get("model_name", "yolov8n.pt")
+    target_epochs = epochs if epochs is not None else cfg.get("epochs", 100)
+    target_batch = batch_size if batch_size is not None else cfg.get("batch_size", 8)
+    target_device = device if device is not None else cfg.get("device", "0")
+
     print("[TRAINING] Initializing Ultralytics YOLO architecture...")
+    print(f"           Model Architecture: {target_model}")
+    print(f"           Epochs: {target_epochs}")
+    print(f"           Batch Size: {target_batch}")
+    print(f"           Compute Target: {target_device}")
+
     try:
         from ultralytics import YOLO
     except ImportError:
         print("[ERROR] Ultralytics not installed. Run: pip install ultralytics", file=sys.stderr)
         sys.exit(1)
 
-    model = YOLO("yolov8m.pt")
+    model = YOLO(target_model)
     model.train(
         data=str(config_path),
-        epochs=epochs,
-        batch=batch_size,
-        imgsz=640,
-        device=device,
+        epochs=target_epochs,
+        batch=target_batch,
+        imgsz=imgsz,
+        device=target_device,
         project="runs/detect",
         name="component_detector",
         save=True,
@@ -89,10 +114,19 @@ def run_training(config_path: Path, epochs: int = 100, batch_size: int = 16, dev
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Train Vehicle Component Detector")
-    parser.add_argument("--config", type=Path, default=Path("ml/config/component_config.yaml"))
-    parser.add_argument("--epochs", type=int, default=100)
-    parser.add_argument("--batch-size", type=int, default=16)
-    parser.add_argument("--device", type=str, default="cpu")
+    parser.add_argument("--config", type=Path, default=Path("ml/config/component_config.yaml"), help="Path to dataset config YAML")
+    parser.add_argument("--model", type=str, default=None, help="YOLO model checkpoint or weights (e.g. yolov8n.pt, yolov8s.pt)")
+    parser.add_argument("--epochs", type=int, default=None, help="Number of training epochs")
+    parser.add_argument("--batch-size", type=int, default=None, help="Batch size (recommended: 8 or 16 for 4GB RTX 3050)")
+    parser.add_argument("--device", type=str, default=None, help="Compute device ('0' for GPU, 'cpu' for CPU)")
+    parser.add_argument("--smoke-test", action="store_true", help="Use smoke-test configuration (3 epochs, yolov8n, batch 8)")
     args = parser.parse_args()
 
-    run_training(args.config, args.epochs, args.batch_size, args.device)
+    cfg_file = Path("ml/config/smoke_test_components.yaml") if args.smoke_test else args.config
+    run_training(
+        config_path=cfg_file,
+        model_name=args.model,
+        epochs=args.epochs,
+        batch_size=args.batch_size,
+        device=args.device,
+    )
