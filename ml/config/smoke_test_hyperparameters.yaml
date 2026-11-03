@@ -1,0 +1,20 @@
+# ==============================================================================
+# Smoke-Test Hyperparameters: Rapid Pipeline Validation
+# Optimized for: NVIDIA GeForce RTX 3050 Laptop GPU (4GB VRAM)
+# ==============================================================================
+
+model: yolov8n.pt                      # Nano architecture
+pretrained: true
+device: 0                              # GPU 0
+batch: 8                               # Extra-conservative memory footprint (<1.4GB)
+imgsz: 640
+epochs: 3                              # 3 quick epochs to verify backward pass & loss descent
+workers: 2
+amp: true
+
+# Fast logging
+project: runs/detect
+name: smoke_test_yolov8n
+save: true
+plots: true
+verbose: true

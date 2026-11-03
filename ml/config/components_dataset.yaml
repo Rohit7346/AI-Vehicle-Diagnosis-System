@@ -1,0 +1,25 @@
+# ==============================================================================
+# Ultralytics YOLOv8 Dataset Specification: Vehicle Component Detection
+# Canonical Structure: data/images/{split} and data/labels/{split}
+# ==============================================================================
+
+# Dataset root directory (Relative to this configuration file or absolute)
+path: ../../data
+
+# Split image directories (Ultralytics auto-maps /images/ to /labels/)
+train: images/train
+val: images/val
+test: images/test
+
+# 10 Automotive Subsystem Classes (Canonical Ontology)
+names:
+  0: engine_bay
+  1: battery
+  2: alternator
+  3: radiator
+  4: brake_rotor
+  5: brake_caliper
+  6: tire_tread
+  7: tire_sidewall
+  8: suspension_strut
+  9: exhaust_manifold

@@ -35,6 +35,18 @@ data/annotations/val/*
 !data/annotations/val/.gitkeep
 data/annotations/test/*
 !data/annotations/test/.gitkeep
+data/images/train/*
+!data/images/train/.gitkeep
+data/images/val/*
+!data/images/val/.gitkeep
+data/images/test/*
+!data/images/test/.gitkeep
+data/labels/train/*
+!data/labels/train/.gitkeep
+data/labels/val/*
+!data/labels/val/.gitkeep
+data/labels/test/*
+!data/labels/test/.gitkeep
 
 # Model Checkpoints and Weights
 *.pt

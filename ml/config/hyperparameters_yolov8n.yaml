@@ -1,0 +1,42 @@
+# ==============================================================================
+# Training Hyperparameters: YOLOv8 Nano for Vehicle Component Detection
+# Optimized for: NVIDIA GeForce RTX 3050 Laptop GPU (4GB VRAM)
+# ==============================================================================
+
+# Model Architecture
+model: yolov8n.pt                      # Lightweight Nano backbone (~3.2M params)
+pretrained: true                       # Transfer learning from COCO pretrained weights
+
+# Compute & Batch Sizing
+device: 0                              # CUDA GPU device index
+batch: 16                              # Optimal batch size (~1.8GB VRAM usage)
+imgsz: 640                             # Input resolution (standard 640x640)
+workers: 2                             # Worker threads (safe for Windows multiprocessing)
+amp: true                              # Automatic Mixed Precision (FP16) on Tensor Cores
+
+# Optimization & Learning Schedule
+epochs: 100                            # Total training epochs
+optimizer: AdamW                       # Stable convergence for fine-tuning
+lr0: 0.001                             # Initial learning rate
+lrf: 0.01                              # Final learning rate ratio (lr0 * lrf)
+weight_decay: 0.0005                   # L2 regularization factor
+warmup_epochs: 3.0                     # Learning rate warm-up epochs
+patience: 20                           # Early stopping patience if validation mAP plateaus
+
+# Data Augmentation (Workshop Invariant)
+hsv_h: 0.015                           # Minor hue adjustment
+hsv_s: 0.7                             # Saturation variation
+hsv_v: 0.4                             # Brightness variation (simulates shop lighting)
+degrees: 10.0                          # Rotation augmentation (+/- 10 degrees)
+translate: 0.1                         # Translation (+/- 10%)
+scale: 0.5                             # Image scaling (+/- 50%)
+fliplr: 0.5                            # Horizontal flip probability
+mosaic: 1.0                            # Mosaic augmentation for multi-scale context
+close_mosaic: 10                       # Disable mosaic in final 10 epochs for sharp boundaries
+
+# Checkpoint Logging & Artifacts
+project: runs/detect                   # Output directory
+name: component_yolov8n                # Run name
+save: true                             # Save best.pt and last.pt checkpoints
+save_period: 10                        # Save checkpoint every 10 epochs
+plots: true                            # Generate confusion matrices and PR curves
