@@ -1,0 +1,88 @@
+# ==============================================================================
+# Monorepo .gitignore: AI-Powered Multimodal Vehicle Fault Detection System
+# ==============================================================================
+
+# Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Byte-compiled / optimized / cache files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Datasets (Strictly exclude raw & processed data; keep structure via .gitkeep & READMEs)
+data/raw/*
+!data/raw/.gitkeep
+!data/raw/README.md
+data/processed/*
+!data/processed/.gitkeep
+!data/processed/README.md
+data/annotations/train/*
+!data/annotations/train/.gitkeep
+data/annotations/val/*
+!data/annotations/val/.gitkeep
+data/annotations/test/*
+!data/annotations/test/.gitkeep
+
+# Model Checkpoints and Weights
+*.pt
+*.pth
+*.onnx
+*.engine
+*.tflite
+*.safetensors
+ml/weights/*
+!ml/weights/.gitkeep
+!ml/weights/README.md
+
+# Training Runs, Experiment Logs and Profiler Dumps
+runs/
+ml/runs/
+wandb/
+ml/wandb/
+lightning_logs/
+*.log
+
+# Frontend (Node / Vite / Build Artifacts)
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+frontend/.vite/
+*.local
+
+# Environment Variables and Secrets
+.env
+.env.*
+!.env.example
+
+# Runtime Uploads and Temporary Storage
+uploads/
+temp/
+backend/uploads/
+backend/temp/
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+
+# IDE and Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace

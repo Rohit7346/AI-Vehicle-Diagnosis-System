@@ -1,0 +1,3 @@
+"""
+Vehicle Diagnosis FastAPI Application.
+"""

@@ -1,0 +1,31 @@
+# Ultralytics YOLO dataset and model configuration for visible faults & wear
+path: ../../data
+train: processed/train
+val: processed/val
+test: processed/test
+
+# Defect and Anomaly Classes (12 classes)
+names:
+  0: fluid_leak_oil
+  1: fluid_leak_coolant
+  2: fluid_leak_brake
+  3: metal_corrosion
+  4: belt_cracking
+  5: hose_deterioration
+  6: terminal_oxidation
+  7: rotor_grooving
+  8: pad_wear_critical
+  9: tire_tread_depth_low
+  10: tire_sidewall_bulge
+  11: structural_dent_crack
+
+# Training Hyperparameters
+model_name: yolov8m.pt
+weights_path: ml/weights/fault_detector_best.pt
+input_size: 640
+epochs: 120
+batch_size: 16
+learning_rate: 0.005
+device: cpu # Change to cuda:0 for GPU accelerated training
+confidence_threshold: 0.30
+iou_threshold: 0.40

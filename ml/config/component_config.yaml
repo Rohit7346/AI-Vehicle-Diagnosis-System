@@ -1,0 +1,29 @@
+# Ultralytics YOLO dataset and model configuration for vehicle components
+path: ../../data
+train: processed/train
+val: processed/val
+test: processed/test
+
+# Subsystem Component Classes (10 classes)
+names:
+  0: engine_bay
+  1: battery
+  2: alternator
+  3: radiator
+  4: brake_rotor
+  5: brake_caliper
+  6: tire_tread
+  7: tire_sidewall
+  8: suspension_strut
+  9: exhaust_manifold
+
+# Training Hyperparameters
+model_name: yolov8m.pt
+weights_path: ml/weights/component_detector_best.pt
+input_size: 640
+epochs: 100
+batch_size: 16
+learning_rate: 0.01
+device: cpu # Change to cuda:0 for GPU accelerated training
+confidence_threshold: 0.35
+iou_threshold: 0.45
