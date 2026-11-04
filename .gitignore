@@ -10,6 +10,10 @@ ENV/
 env.bak/
 venv.bak/
 
+# Node Modules
+node_modules/
+frontend/node_modules/
+
 # Byte-compiled / optimized / cache files
 __pycache__/
 *.py[cod]
@@ -47,6 +51,19 @@ data/labels/val/*
 !data/labels/val/.gitkeep
 data/labels/test/*
 !data/labels/test/.gitkeep
+
+# Prototype 5-class Dataset (Exclude images and labels; retain data.yaml specification)
+data/prototype_5class/images/
+data/prototype_5class/labels/
+!data/prototype_5class/data.yaml
+
+# Dataset Archives and Compressed Files
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+*.7z
 
 # Model Checkpoints and Weights
 *.pt

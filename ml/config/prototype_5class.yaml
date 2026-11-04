@@ -1,0 +1,52 @@
+# ==============================================================================
+# AI-Powered Multimodal Vehicle Fault Detection and Diagnosis System
+# Stage 1 Prototype: 5-Component Object Detection Dataset Specification
+# ==============================================================================
+# Model Architecture Target: Ultralytics YOLOv8 Nano (yolov8n.pt)
+# Prototype Scope: Initial critical under-hood powertrain & electrical components.
+#
+# NOTE: This configuration is strictly separated from the canonical 10-class
+# ontology in `ml/config/components_dataset.yaml` to ensure modularity.
+# ==============================================================================
+
+# Dataset root directory (Relative to this configuration file or absolute path)
+path: ../../data/prototype_5class
+
+# Split directories (YOLO convention maps images/{split} to labels/{split})
+train: images/train
+val: images/val
+test: images/test
+
+# 5 Prototype Subsystem Classes (Strict Semantic Hierarchy)
+names:
+  0: engine_bay
+  1: battery
+  2: alternator
+  3: radiator
+  4: exhaust_manifold
+
+# ==============================================================================
+# SEMANTIC BOUNDARIES & ANNOTATION RULES:
+# ==============================================================================
+# 0 (engine_bay):
+#   - Scope: The entire vehicle engine compartment enclosure (under the open hood).
+#   - Exclusions: Must NOT be confused with or mapped to the "engine_block" /
+#     cylinder head casting alone.
+#
+# 1 (battery):
+#   - Scope: 12V automotive starter battery, casing, terminals (+/-), and hold-down bracket.
+#
+# 2 (alternator):
+#   - Scope: Serpentine-belt-driven alternating current electrical generator unit
+#     mounted to the engine block with pulley and wire connections.
+#
+# 3 (radiator):
+#   - Scope: Front cooling radiator core assembly, cooling fins, top/bottom tanks,
+#     and radiator cap.
+#
+# 4 (exhaust_manifold):
+#   - Scope: Cast iron or tubular stainless-steel exhaust manifold/header bolted
+#     directly to the cylinder head exhaust ports.
+#   - Exclusions: Must NOT be confused with or mapped to the catalytic converter,
+#     exhaust downpipe, intermediate muffler, or rear tailpipe.
+# ==============================================================================

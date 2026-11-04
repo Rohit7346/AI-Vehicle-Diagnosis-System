@@ -1,0 +1,16 @@
+# ==============================================================================
+# Ultralytics YOLOv8 Dataset Specification: 5-Component Prototype
+# Filtered & Remapped from Engine Parts Detector v3 (CC BY 4.0)
+# ==============================================================================
+
+path: .
+train: images/train
+val: images/val
+test: images/test
+nc: 5
+names:
+  0: engine_bay
+  1: battery
+  2: alternator
+  3: radiator
+  4: exhaust_manifold
