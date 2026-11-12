@@ -249,10 +249,15 @@ def test_generated_prototype_dataset_pairing_and_ontology():
                 class_counts[cls_id] += 1
                 assert cls_id in (1, 3), f"Unexpected class ID {cls_id} found in prototype label {lbl_file}"
 
-    assert total_images == 1148
-    assert total_labels == 1148
-    assert class_counts[1] == 1104  # All Battery annotations preserved
-    assert class_counts[3] == 680   # All Radiator annotations preserved
+    assert total_images == 1147
+    assert total_labels == 1147
+    assert class_counts[1] == 1103  # Battery annotations after removing validation duplicate
+    assert class_counts[3] == 680   # Radiator annotations preserved
     assert class_counts[0] == 0     # engine_bay not invented
     assert class_counts[2] == 0     # alternator not invented
     assert class_counts[4] == 0     # exhaust_manifold not invented
+
+    # Verify zero data leakage across prototype splits
+    from ml.datasets.annotator_utils import AnnotationValidator
+    leakage = AnnotationValidator.detect_data_leakage(proto_dir)
+    assert leakage["has_leakage"] is False, f"Data leakage detected: {leakage}"

@@ -33,6 +33,8 @@ data/raw/*
 data/processed/*
 !data/processed/.gitkeep
 !data/processed/README.md
+data/cleaned/*
+!data/cleaned/.gitkeep
 data/annotations/train/*
 !data/annotations/train/.gitkeep
 data/annotations/val/*

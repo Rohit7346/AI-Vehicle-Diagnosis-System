@@ -2,25 +2,23 @@ import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import Dashboard from './pages/Dashboard';
+import ComponentDetectionPage from './pages/ComponentDetectionPage';
 import DiagnosticsPage from './pages/DiagnosticsPage';
 import ModelStatusPage from './pages/ModelStatusPage';
 import ResearchDocsPage from './pages/ResearchDocsPage';
 import apiService from './services/api';
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState('dashboard');
+  const [activeTab, setActiveTab] = useState('components');
   const [healthData, setHealthData] = useState(null);
-  const [isRefreshing, setIsRefreshing] = useState(false);
 
   const fetchHealth = async () => {
-    setIsRefreshing(true);
     const res = await apiService.getHealthStatus();
     if (res.success) {
       setHealthData(res.data);
     } else {
       setHealthData(null);
     }
-    setIsRefreshing(false);
   };
 
   useEffect(() => {
@@ -50,8 +48,11 @@ export default function App() {
                 setActiveTab={setActiveTab}
               />
             )}
+            {activeTab === 'components' && (
+              <ComponentDetectionPage systemHealth={healthData} />
+            )}
             {activeTab === 'diagnostics' && (
-              <DiagnosticsPage systemHealth={healthData} />
+              <DiagnosticsPage systemHealth={healthData} setActiveTab={setActiveTab} />
             )}
             {activeTab === 'models' && (
               <ModelStatusPage healthData={healthData} />

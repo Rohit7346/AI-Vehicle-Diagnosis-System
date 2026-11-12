@@ -1,0 +1,10 @@
+source_dataset_zip,roboflow_project,license,split,total_images,total_labels,radiator_class_id,radiator_images,radiator_bboxes,radiator_image_pct,tiny_boxes_lt_0005,boxes_0005_to_005,boxes_gt_005,mean_bbox_area,mean_aspect_ratio,multi_box_images,undersized_images_lt_400px,exact_duplicates,near_duplicate_pairs,cross_split_leakage_pairs,corrupted_label_files,empty_label_files
+Engine Parts Detector.v1i.yolov8.zip,engine-parts-detector-wqzdk,CC BY 4.0,train,265,265,4,177,184,66.79%,95,88,1,0.00756,0.99,7,14,1,N/A (split level),N/A (split level),1,0
+Engine Parts Detector.v1i.yolov8.zip,engine-parts-detector-wqzdk,CC BY 4.0,valid,86,86,4,54,56,62.79%,34,22,0,0.00549,0.98,2,4,0,N/A (split level),N/A (split level),0,0
+Engine Parts Detector.v1i.yolov8.zip,engine-parts-detector-wqzdk,CC BY 4.0,test,49,49,4,29,29,59.18%,10,19,0,0.00776,0.98,0,1,0,N/A (split level),N/A (split level),0,0
+Engine Parts Detector.v1i.yolov8.zip,engine-parts-detector-wqzdk,CC BY 4.0,ALL_SPLITS,400,400,4,260,269,65.00%,139,129,1,0.00715,0.98,9,19,1,21,13,1,0
+engine-bay-parts.v1i.yolov8.zip,engine-bay-parts-agjnc,MIT,train,200,200,9,118,119,59.00%,1,83,35,0.04459,8.34,1,10,0,5,0,0,0
+engine-bay-parts.v1i.yolov8.zip,engine-bay-parts-agjnc,MIT,valid,0,0,9,0,0,N/A,0,0,0,N/A,N/A,0,0,0,0,0,0,0
+engine-bay-parts.v1i.yolov8.zip,engine-bay-parts-agjnc,MIT,test,0,0,9,0,0,N/A,0,0,0,N/A,N/A,0,0,0,0,0,0,0
+engine-bay-parts.v1i.yolov8.zip,engine-bay-parts-agjnc,MIT,ALL_SPLITS,200,200,9,118,119,59.00%,1,83,35,0.04459,8.34,1,10,0,5,0,0,0
+COMBINED_SOURCES,TWO_DATASETS,CC BY 4.0 / MIT,ALL_SPLITS,600,600,4 (EPD) / 9 (EBP),378,388,63.00%,140,212,36,0.01863,3.24,10,29,1,26,13,1,0

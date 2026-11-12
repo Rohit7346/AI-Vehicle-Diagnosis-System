@@ -24,9 +24,11 @@
 | Split | Source Images | Retained Images | Skipped Images | Battery (ID 1) | Radiator (ID 3) | Total Retained Annotations | Excluded Annotations |
 |---|---|---|---|---|---|---|---|
 | **train** | 1,339 | **985** | 354 | 945 | 587 | **1,532** | 2,432 |
-| **val** | 137 | **102** | 35 | 100 | 62 | **162** | 263 |
+| **val** | 137 | **101** | 35 | 99 | 62 | **161** | 263 |
 | **test** | 83 | **61** | 22 | 59 | 31 | **90** | 142 |
-| **Total** | **1,559** | **1,148** | **411** | **1,104** | **680** | **1,784** | **2,837** |
+| **Total** | **1,559** | **1,147** | **411** | **1,103** | **680** | **1,783** | **2,837** |
+
+*Note: Validation image count updated from 102 to 101 and Battery annotations from 1,104 to 1,103 following Stage 2.1 deduplication.*
 
 ## 3. Integrity & Quality Guardrail Checks
 
@@ -36,7 +38,7 @@
 | **Missing Image / Label Pairs** | 0 | **PASSED (100% paired, 0 missing)** |
 | **Annotation Syntax Errors** | 0 | **PASSED (0 syntax/parsing errors)** |
 | **Invalid Bounding Boxes** | 0 | **PASSED (0 out-of-bounds, 0 degenerate)** |
-| **Pipeline Cross-Split Leakage** | 0 cross-split image moves | **PASSED (Strict split isolation)** |
+| **Pipeline Cross-Split Leakage** | 0 cross-split duplicates | **PASSED (Strict split isolation)** |
 
 ## 4. Upstream Source Dataset Leakage Finding
 

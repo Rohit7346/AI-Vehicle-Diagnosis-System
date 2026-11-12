@@ -33,10 +33,13 @@ class Settings(BaseSettings):
             return [origin.strip() for origin in v.split(",") if origin.strip()]
         return v
 
-    # Machine Learning Checkpoint Paths
+    # Machine Learning Checkpoint Paths & Settings
     COMPONENT_MODEL_WEIGHTS: Path = Path("ml/weights/component_detector_best.pt")
     FAULT_MODEL_WEIGHTS: Path = Path("ml/weights/fault_detector_best.pt")
-    DEVICE: str = "cpu"
+    COMPONENT_MODEL_NAME: str = "YOLOv8n-VehicleComponents-3Class"
+    COMPONENT_MODEL_VERSION: str = "3.1.0"
+    COMPONENT_CONFIDENCE_THRESHOLD: float = 0.25
+    DEVICE: str = "auto"
     CONFIDENCE_THRESHOLD: float = 0.35
     IOU_THRESHOLD: float = 0.45
 

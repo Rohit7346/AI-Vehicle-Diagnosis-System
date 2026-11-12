@@ -1,0 +1,434 @@
+{
+  "battery": [
+    {
+      "sample_index": 1,
+      "filename": "battery_sample_01.jpg",
+      "source_split": "train",
+      "original_image": "03_Battery_jpg.rf.08751c1e209c1b6905b67201a609508e.jpg",
+      "dimensions": "416x416",
+      "annotations": [
+        {
+          "class_id": 1,
+          "class_name": "battery",
+          "x_c": 0.4339,
+          "y_c": 0.5168,
+          "w": 0.4663,
+          "h": 0.5409
+        }
+      ]
+    },
+    {
+      "sample_index": 2,
+      "filename": "battery_sample_02.jpg",
+      "source_split": "train",
+      "original_image": "03_Battery_jpg.rf.6bbf76d55d38b6cf01ed67c2aa13224c.jpg",
+      "dimensions": "416x416",
+      "annotations": [
+        {
+          "class_id": 1,
+          "class_name": "battery",
+          "x_c": 0.4832,
+          "y_c": 0.4339,
+          "w": 0.5409,
+          "h": 0.4663
+        }
+      ]
+    },
+    {
+      "sample_index": 3,
+      "filename": "battery_sample_03.jpg",
+      "source_split": "train",
+      "original_image": "03_Battery_jpg.rf.a6f8efacdf94cb5a332b0366171941b8.jpg",
+      "dimensions": "416x416",
+      "annotations": [
+        {
+          "class_id": 1,
+          "class_name": "battery",
+          "x_c": 0.5661,
+          "y_c": 0.5168,
+          "w": 0.4663,
+          "h": 0.5409
+        }
+      ]
+    },
+    {
+      "sample_index": 4,
+      "filename": "battery_sample_04.jpg",
+      "source_split": "train",
+      "original_image": "06fd4e8d1908463b2a3ae9d418eb9696x_jpg.rf.22c81887ff6e30adf09e333e28d95f71.jpg",
+      "dimensions": "416x416",
+      "annotations": [
+        {
+          "class_id": 1,
+          "class_name": "battery",
+          "x_c": 0.7909,
+          "y_c": 0.5938,
+          "w": 0.4038,
+          "h": 0.8125
+        }
+      ]
+    },
+    {
+      "sample_index": 5,
+      "filename": "battery_sample_05.jpg",
+      "source_split": "train",
+      "original_image": "06fd4e8d1908463b2a3ae9d418eb9696x_jpg.rf.6f122dbc8b08510aadf21cfbec06ff40.jpg",
+      "dimensions": "416x416",
+      "annotations": [
+        {
+          "class_id": 1,
+          "class_name": "battery",
+          "x_c": 0.4062,
+          "y_c": 0.7909,
+          "w": 0.8125,
+          "h": 0.4038
+        }
+      ]
+    },
+    {
+      "sample_index": 6,
+      "filename": "battery_sample_06.jpg",
+      "source_split": "train",
+      "original_image": "06fd4e8d1908463b2a3ae9d418eb9696x_jpg.rf.93c20ec099eda82b7cb5dc1a56088e24.jpg",
+      "dimensions": "416x416",
+      "annotations": [
+        {
+          "class_id": 1,
+          "class_name": "battery",
+          "x_c": 0.2091,
+          "y_c": 0.5938,
+          "w": 0.4038,
+          "h": 0.8125
+        }
+      ]
+    },
+    {
+      "sample_index": 7,
+      "filename": "battery_sample_07.jpg",
+      "source_split": "train",
+      "original_image": "08375e61-1df9-4390-b62e-45a0f71ee92e_jpg.rf.1cf57f3827c3a683c4cf30e4dd94c3db.jpg",
+      "dimensions": "416x416",
+      "annotations": [
+        {
+          "class_id": 1,
+          "class_name": "battery",
+          "x_c": 0.2584,
+          "y_c": 0.4651,
+          "w": 0.1442,
+          "h": 0.2067
+        },
+        {
+          "class_id": 3,
+          "class_name": "radiator",
+          "x_c": 0.3257,
+          "y_c": 0.4171,
+          "w": 0.0529,
+          "h": 0.0577
+        }
+      ]
+    },
+    {
+      "sample_index": 8,
+      "filename": "battery_sample_08.jpg",
+      "source_split": "train",
+      "original_image": "08375e61-1df9-4390-b62e-45a0f71ee92e_jpg.rf.b81785bafaff1f89f8ec42d383d200bb.jpg",
+      "dimensions": "416x416",
+      "annotations": [
+        {
+          "class_id": 1,
+          "class_name": "battery",
+          "x_c": 0.4651,
+          "y_c": 0.7416,
+          "w": 0.2067,
+          "h": 0.1442
+        },
+        {
+          "class_id": 3,
+          "class_name": "radiator",
+          "x_c": 0.4171,
+          "y_c": 0.6743,
+          "w": 0.0577,
+          "h": 0.0529
+        }
+      ]
+    },
+    {
+      "sample_index": 9,
+      "filename": "battery_sample_09.jpg",
+      "source_split": "train",
+      "original_image": "0c608bf17093ab3d77507867df90a6f0c8f354c1_jpg.rf.0d88655ea1a71ae49a258abe9de774a9.jpg",
+      "dimensions": "416x416",
+      "annotations": [
+        {
+          "class_id": 3,
+          "class_name": "radiator",
+          "x_c": 0.5276,
+          "y_c": 0.8257,
+          "w": 0.0673,
+          "h": 0.0649
+        },
+        {
+          "class_id": 1,
+          "class_name": "battery",
+          "x_c": 0.6671,
+          "y_c": 0.3041,
+          "w": 0.125,
+          "h": 0.1587
+        }
+      ]
+    },
+    {
+      "sample_index": 10,
+      "filename": "battery_sample_10.jpg",
+      "source_split": "train",
+      "original_image": "0c608bf17093ab3d77507867df90a6f0c8f354c1_jpg.rf.8fb9882792f93a74e7cd9fe6497b9a8d.jpg",
+      "dimensions": "416x416",
+      "annotations": [
+        {
+          "class_id": 3,
+          "class_name": "radiator",
+          "x_c": 0.5276,
+          "y_c": 0.1743,
+          "w": 0.0673,
+          "h": 0.0649
+        },
+        {
+          "class_id": 1,
+          "class_name": "battery",
+          "x_c": 0.6671,
+          "y_c": 0.6959,
+          "w": 0.125,
+          "h": 0.1587
+        }
+      ]
+    }
+  ],
+  "radiator": [
+    {
+      "sample_index": 1,
+      "filename": "radiator_sample_01.jpg",
+      "source_split": "train",
+      "original_image": "000000630913_jpeg.rf.02bf3fa3f86674d9240e4bf9a0ebee55.jpg",
+      "dimensions": "416x416",
+      "annotations": [
+        {
+          "class_id": 3,
+          "class_name": "radiator",
+          "x_c": 0.9279,
+          "y_c": 0.5156,
+          "w": 0.0769,
+          "h": 0.101
+        }
+      ]
+    },
+    {
+      "sample_index": 2,
+      "filename": "radiator_sample_02.jpg",
+      "source_split": "train",
+      "original_image": "000000630913_jpeg.rf.9bc14e603ccb5d56319275929685a8da.jpg",
+      "dimensions": "416x416",
+      "annotations": [
+        {
+          "class_id": 3,
+          "class_name": "radiator",
+          "x_c": 0.5156,
+          "y_c": 0.0721,
+          "w": 0.101,
+          "h": 0.0769
+        }
+      ]
+    },
+    {
+      "sample_index": 3,
+      "filename": "radiator_sample_03.jpg",
+      "source_split": "train",
+      "original_image": "000000630913_jpeg.rf.d5c9b88554e703d89f654511e8e3a0b6.jpg",
+      "dimensions": "416x416",
+      "annotations": [
+        {
+          "class_id": 3,
+          "class_name": "radiator",
+          "x_c": 0.0721,
+          "y_c": 0.5156,
+          "w": 0.0769,
+          "h": 0.101
+        }
+      ]
+    },
+    {
+      "sample_index": 4,
+      "filename": "radiator_sample_04.jpg",
+      "source_split": "train",
+      "original_image": "08375e61-1df9-4390-b62e-45a0f71ee92e_jpg.rf.1cf57f3827c3a683c4cf30e4dd94c3db.jpg",
+      "dimensions": "416x416",
+      "annotations": [
+        {
+          "class_id": 1,
+          "class_name": "battery",
+          "x_c": 0.2584,
+          "y_c": 0.4651,
+          "w": 0.1442,
+          "h": 0.2067
+        },
+        {
+          "class_id": 3,
+          "class_name": "radiator",
+          "x_c": 0.3257,
+          "y_c": 0.4171,
+          "w": 0.0529,
+          "h": 0.0577
+        }
+      ]
+    },
+    {
+      "sample_index": 5,
+      "filename": "radiator_sample_05.jpg",
+      "source_split": "train",
+      "original_image": "08375e61-1df9-4390-b62e-45a0f71ee92e_jpg.rf.b81785bafaff1f89f8ec42d383d200bb.jpg",
+      "dimensions": "416x416",
+      "annotations": [
+        {
+          "class_id": 1,
+          "class_name": "battery",
+          "x_c": 0.4651,
+          "y_c": 0.7416,
+          "w": 0.2067,
+          "h": 0.1442
+        },
+        {
+          "class_id": 3,
+          "class_name": "radiator",
+          "x_c": 0.4171,
+          "y_c": 0.6743,
+          "w": 0.0577,
+          "h": 0.0529
+        }
+      ]
+    },
+    {
+      "sample_index": 6,
+      "filename": "radiator_sample_06.jpg",
+      "source_split": "train",
+      "original_image": "0c608bf17093ab3d77507867df90a6f0c8f354c1_jpg.rf.0d88655ea1a71ae49a258abe9de774a9.jpg",
+      "dimensions": "416x416",
+      "annotations": [
+        {
+          "class_id": 3,
+          "class_name": "radiator",
+          "x_c": 0.5276,
+          "y_c": 0.8257,
+          "w": 0.0673,
+          "h": 0.0649
+        },
+        {
+          "class_id": 1,
+          "class_name": "battery",
+          "x_c": 0.6671,
+          "y_c": 0.3041,
+          "w": 0.125,
+          "h": 0.1587
+        }
+      ]
+    },
+    {
+      "sample_index": 7,
+      "filename": "radiator_sample_07.jpg",
+      "source_split": "train",
+      "original_image": "0c608bf17093ab3d77507867df90a6f0c8f354c1_jpg.rf.8fb9882792f93a74e7cd9fe6497b9a8d.jpg",
+      "dimensions": "416x416",
+      "annotations": [
+        {
+          "class_id": 3,
+          "class_name": "radiator",
+          "x_c": 0.5276,
+          "y_c": 0.1743,
+          "w": 0.0673,
+          "h": 0.0649
+        },
+        {
+          "class_id": 1,
+          "class_name": "battery",
+          "x_c": 0.6671,
+          "y_c": 0.6959,
+          "w": 0.125,
+          "h": 0.1587
+        }
+      ]
+    },
+    {
+      "sample_index": 8,
+      "filename": "radiator_sample_08.jpg",
+      "source_split": "train",
+      "original_image": "0c608bf17093ab3d77507867df90a6f0c8f354c1_jpg.rf.e15ffdc62c63e7e20a05ca01765a963a.jpg",
+      "dimensions": "416x416",
+      "annotations": [
+        {
+          "class_id": 3,
+          "class_name": "radiator",
+          "x_c": 0.1743,
+          "y_c": 0.4724,
+          "w": 0.0649,
+          "h": 0.0673
+        },
+        {
+          "class_id": 1,
+          "class_name": "battery",
+          "x_c": 0.6959,
+          "y_c": 0.3329,
+          "w": 0.1587,
+          "h": 0.125
+        }
+      ]
+    },
+    {
+      "sample_index": 9,
+      "filename": "radiator_sample_09.jpg",
+      "source_split": "train",
+      "original_image": "100_2029_jpg.rf.255140ccd8149be7ea94f506357766f1.jpg",
+      "dimensions": "416x416",
+      "annotations": [
+        {
+          "class_id": 1,
+          "class_name": "battery",
+          "x_c": 0.6575,
+          "y_c": 0.2572,
+          "w": 0.101,
+          "h": 0.1635
+        },
+        {
+          "class_id": 3,
+          "class_name": "radiator",
+          "x_c": 0.2608,
+          "y_c": 0.387,
+          "w": 0.0625,
+          "h": 0.0529
+        }
+      ]
+    },
+    {
+      "sample_index": 10,
+      "filename": "radiator_sample_10.jpg",
+      "source_split": "train",
+      "original_image": "100_2029_jpg.rf.69cfbe8ee3506c0305f52691766fa10f.jpg",
+      "dimensions": "416x416",
+      "annotations": [
+        {
+          "class_id": 1,
+          "class_name": "battery",
+          "x_c": 0.3425,
+          "y_c": 0.7428,
+          "w": 0.101,
+          "h": 0.1635
+        },
+        {
+          "class_id": 3,
+          "class_name": "radiator",
+          "x_c": 0.7392,
+          "y_c": 0.613,
+          "w": 0.0625,
+          "h": 0.0529
+        }
+      ]
+    }
+  ]
+}

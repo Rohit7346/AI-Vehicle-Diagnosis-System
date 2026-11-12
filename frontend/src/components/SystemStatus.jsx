@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle2, AlertTriangle, XCircle, HardDrive, Cpu, Terminal } from 'lucide-react';
+import { CheckCircle2, AlertTriangle, Cpu, Terminal } from 'lucide-react';
 
 export default function SystemStatus({ healthData, onRefresh }) {
   const compModel = healthData?.models?.component_detector;

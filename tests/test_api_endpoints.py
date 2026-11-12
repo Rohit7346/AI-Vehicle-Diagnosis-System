@@ -27,7 +27,9 @@ def test_health_endpoint():
     assert "models" in data
     assert "component_detector" in data["models"]
     assert "fault_detector" in data["models"]
-    assert data["models"]["component_detector"]["loaded"] is False
+    # Component detector weights are deployed in Stage 3.2, fault detector weights are pending
+    assert data["models"]["component_detector"]["loaded"] is True
+    assert data["models"]["fault_detector"]["loaded"] is False
 
 
 def test_diagnose_image_missing_weights_returns_503():

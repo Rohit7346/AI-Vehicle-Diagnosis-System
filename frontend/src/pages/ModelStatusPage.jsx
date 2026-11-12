@@ -1,5 +1,5 @@
 import React from 'react';
-import { Cpu, CheckCircle2, AlertTriangle, Terminal, HardDrive, FileCode } from 'lucide-react';
+import { Cpu, CheckCircle2, AlertTriangle, Terminal } from 'lucide-react';
 
 export default function ModelStatusPage({ healthData }) {
   const compModel = healthData?.models?.component_detector;
@@ -38,31 +38,35 @@ export default function ModelStatusPage({ healthData }) {
             )}
           </div>
 
-          <div className="space-y-2 text-xs">
-            <div className="flex justify-between py-1 border-b border-slate-800/60">
-              <span className="text-slate-400">Expected Checkpoint:</span>
-              <span className="font-mono text-slate-200">{compModel?.weights_path || 'ml/weights/component_detector_best.pt'}</span>
+            <div className="space-y-2 text-xs">
+              <div className="flex justify-between py-1 border-b border-slate-800/60">
+                <span className="text-slate-400">Deployed Checkpoint:</span>
+                <span className="font-mono text-slate-200">{compModel?.weights_path || 'ml/weights/component_detector_best.pt'}</span>
+              </div>
+              <div className="flex justify-between py-1 border-b border-slate-800/60">
+                <span className="text-slate-400">File Exists on Disk:</span>
+                <span className="font-mono text-emerald-400 font-semibold">{compModel?.weights_exist_on_disk ? 'Yes (Verified)' : 'No'}</span>
+              </div>
+              <div className="flex justify-between py-1 border-b border-slate-800/60">
+                <span className="text-slate-400">Active Classes (3):</span>
+                <span className="text-slate-200">0: engine_bay, 1: battery, 2: radiator</span>
+              </div>
+              <div className="flex justify-between py-1 border-b border-slate-800/60">
+                <span className="text-slate-400">Validation Performance:</span>
+                <span className="font-mono text-blue-300">mAP@0.5: 0.673 | mAP50-95: 0.411</span>
+              </div>
+              <div className="flex justify-between py-1">
+                <span className="text-slate-400">Architecture:</span>
+                <span className="text-slate-200">Ultralytics YOLOv8 Nano (3.01M params)</span>
+              </div>
             </div>
-            <div className="flex justify-between py-1 border-b border-slate-800/60">
-              <span className="text-slate-400">File Exists on Disk:</span>
-              <span className="font-mono text-slate-200">{compModel?.weights_exist_on_disk ? 'Yes' : 'No'}</span>
-            </div>
-            <div className="flex justify-between py-1 border-b border-slate-800/60">
-              <span className="text-slate-400">Target Classes:</span>
-              <span className="text-slate-200">10 Subsystem Categories</span>
-            </div>
-            <div className="flex justify-between py-1">
-              <span className="text-slate-400">Architecture:</span>
-              <span className="text-slate-200">Ultralytics YOLOv8 Medium (YOLOv8m)</span>
-            </div>
-          </div>
 
-          <div className="p-3 bg-slate-900/80 rounded-lg border border-slate-800">
-            <span className="text-[11px] text-slate-400 font-semibold block mb-1">Training Command:</span>
-            <code className="text-xs font-mono text-blue-300">
-              python -m ml.training.train_components --epochs 100 --batch-size 16
-            </code>
-          </div>
+            <div className="p-3 bg-slate-900/80 rounded-lg border border-slate-800">
+              <span className="text-[11px] text-slate-400 font-semibold block mb-1">Inference API Endpoint:</span>
+              <code className="text-xs font-mono text-blue-300">
+                POST /api/v1/detect/components
+              </code>
+            </div>
         </div>
 
         {/* Fault Detector Card */}

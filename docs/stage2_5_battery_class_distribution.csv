@@ -1,0 +1,10 @@
+source_dataset_zip,roboflow_project,license,split,total_images,total_labels,battery_class_id,battery_images,battery_bboxes,battery_image_pct,air_coolant_bboxes,fuse_box_bboxes,main_engine_bboxes,radiator_bboxes,windscreen_washer_bboxes,other_classes_bboxes,empty_label_files,corrupted_label_files
+Engine Parts Detector.v1i.yolov8.zip,engine-parts-detector-wqzdk,CC BY 4.0,train,265,265,1,236,236,89.06%,127,154,203,184,2,0,0,1
+Engine Parts Detector.v1i.yolov8.zip,engine-parts-detector-wqzdk,CC BY 4.0,valid,86,86,1,84,84,97.67%,37,51,61,56,1,0,0,0
+Engine Parts Detector.v1i.yolov8.zip,engine-parts-detector-wqzdk,CC BY 4.0,test,49,49,1,43,43,87.76%,26,29,30,29,1,0,0,0
+Engine Parts Detector.v1i.yolov8.zip,engine-parts-detector-wqzdk,CC BY 4.0,ALL_SPLITS,400,400,1,363,363,90.75%,190,234,294,269,4,0,0,1
+engine-bay-parts.v1i.yolov8.zip,engine-bay-parts-agjnc,MIT,train,200,200,2,127,129,63.50%,0,81,0,119,1,407,0,0
+engine-bay-parts.v1i.yolov8.zip,engine-bay-parts-agjnc,MIT,valid,0,0,2,0,0,N/A,0,0,0,0,0,0,0,0
+engine-bay-parts.v1i.yolov8.zip,engine-bay-parts-agjnc,MIT,test,0,0,2,0,0,N/A,0,0,0,0,0,0,0,0
+engine-bay-parts.v1i.yolov8.zip,engine-bay-parts-agjnc,MIT,ALL_SPLITS,200,200,2,127,129,63.50%,0,81,0,119,1,407,0,0
+COMBINED_SOURCES,TWO_DATASETS,CC BY 4.0 / MIT,ALL_SPLITS,600,600,1 (EPD) / 2 (EBP),490,492,81.67%,190,315,294,388,5,407,0,1

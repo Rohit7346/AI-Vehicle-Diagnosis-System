@@ -1,9 +1,10 @@
 import React from 'react';
-import { LayoutDashboard, Stethoscope, Cpu, BookOpen, Layers } from 'lucide-react';
+import { LayoutDashboard, Layers, Stethoscope, Cpu, BookOpen } from 'lucide-react';
 
 export default function Sidebar({ activeTab, setActiveTab }) {
   const navItems = [
     { id: 'dashboard', label: 'Executive Dashboard', icon: LayoutDashboard },
+    { id: 'components', label: 'Component Detection', icon: Layers },
     { id: 'diagnostics', label: 'Subsystem Diagnosis', icon: Stethoscope },
     { id: 'models', label: 'Model Architecture & Weights', icon: Cpu },
     { id: 'docs', label: 'Research Documentation', icon: BookOpen },

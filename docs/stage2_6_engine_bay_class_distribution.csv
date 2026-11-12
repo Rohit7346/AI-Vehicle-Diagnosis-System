@@ -1,0 +1,5 @@
+split,total_images,total_labels,engine_bay_images,engine_bay_bboxes,polygon_annotations,standard_bboxes,empty_labels,mean_polygon_vertices,class_id,class_name,prototype_class_id,image_resolution,cross_split_leakage_pairs
+train,135,135,135,135,134,1,0,8.1,0,engine_bay,0,512x512,1
+valid,38,38,38,38,33,5,0,8.4,0,engine_bay,0,512x512,1
+test,19,19,18,18,18,0,1,8.2,0,engine_bay,0,512x512,0
+ALL_SPLITS,192,192,191,191,185,6,1,8.2,0,engine_bay,0,512x512,1
